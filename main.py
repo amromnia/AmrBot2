@@ -7,6 +7,7 @@ import json
 import logging
 import argparse
 import sys
+import os
 
 # logger = logging.getLogger('discord')
 # logger.setLevel(logging.DEBUG)
@@ -154,6 +155,10 @@ def arg_handle():
 
 if __name__ == "__main__":
     arg_handle()
+    #check if .env and config.json exist
+    if not os.path.exists('.env') or not os.path.exists('config.json'):
+        print("Bot is not initialized. Run 'python main.py --install' to initialize the bot")
+        exit(1)
     # check for no arguments
     if len(sys.argv) == 1:
         main()
