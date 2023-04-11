@@ -24,7 +24,7 @@ For Additional Arguments Use:
 python main.py -h
 ```
 
-## Supported Commands: 
+## Supported Commands (Note: All commands support normal prefixes)
 ```
 /burn [names]: Sends a random embedded gif of burning list of names
 /kill [names]: Currently same as /burn, in the future will add more killing methods
