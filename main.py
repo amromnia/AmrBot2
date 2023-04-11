@@ -77,6 +77,7 @@ def arg_handle():
     g.add_argument('--list-gifs', help='List all the gifs in the list of gifs', action='store_true')
     g.add_argument('--change-prefix', help='Change the command prefix')
     g.add_argument('--change-token', help='Change the discord bot token')
+    g.add_argument('--headless-install', help='Install the bot without user input (only works if config.json already exists)', dest='headless_install_env')
 
     args = parser.parse_args()
     add_gifs_url = args.add_gif_url
@@ -151,6 +152,10 @@ def arg_handle():
     if args.change_token:
         with open('.env', 'w') as f:
             f.write(f"TOKEN={args.change_token}")
+
+    if args.headless_install_env:
+        with open('.env', 'w') as f:
+            f.write(f"TOKEN={args.headless_install_env}")
 
 
 if __name__ == "__main__":
